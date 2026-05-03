@@ -20,4 +20,15 @@ console.log(typeof NOME);
 console.log(typeof curso);
 
 document.getElementById("meuNome").innerText = NOME;
+document.getElementById("tituloProfissional").innerText = tituloProfissional;
+document.getElementById("minhaBio").innerText = minhaBio;
+document.getElementById("anoFormatura").innerText = anoFormatura;
+document.getElementById("anoIngresso").innerText = anoIngresso;
+
+// Funcionalidade do botão "Sobre mim"
+const botao = document.querySelector('.botao');
+botao.addEventListener('click', function() {
+    const informacoes = document.querySelector('.informacoes');
+    informacoes.scrollIntoView({ behavior: 'smooth' });
+});
 
