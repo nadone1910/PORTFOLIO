@@ -18,7 +18,10 @@
     background-color: #000000;
     
 }
+.tempo {
+    font-family: 'Times New Roman', Times, serif;
 
+}
 .nav {
     border-radius: 5px;
     background: linear-gradient(270deg, #000000, #0e0c0c, #131313);
