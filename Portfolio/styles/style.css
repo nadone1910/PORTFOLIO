@@ -18,10 +18,8 @@
     background-color: #000000;
     
 }
-.tempo {
-    font-family: 'Times New Roman', Times, serif;
 
-}
+
 .nav {
     border-radius: 5px;
     background: linear-gradient(270deg, #000000, #0e0c0c, #131313);
@@ -66,6 +64,8 @@
     animation-delay: 2s;
 }
 
+
+
 .nuvem {
     position: absolute;
     width: 80px;
@@ -75,17 +75,13 @@
     animation: mover 15s linear infinite;
 }
 
-.nuvem:nth-child(4) {
-    top: 30%;
-    left: -80px;
-    animation-delay: 0s;
+.tempo {
+    display: flex;
+    gap: 4px; /* espaço entre eles */
+    justify-content: left; /* centraliza na tela */
+    
 }
 
-.nuvem:nth-child(5) {
-    top: 70%;
-    left: -80px;
-    animation-delay: 7s;
-}
 
 @keyframes piscar {
     0%, 100% { opacity: 1; }
