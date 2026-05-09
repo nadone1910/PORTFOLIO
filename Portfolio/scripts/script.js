@@ -78,22 +78,6 @@ if (diaFormatura - diaAtual <= 0) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Funcionalidade do botão "Sobre mim"
 const botao = document.querySelector('.botao');
 botao.addEventListener('click', function() {
@@ -102,3 +86,56 @@ botao.addEventListener('click', function() {
 });
 
 
+
+
+const skills = [
+  { nome: "HTML", nivel: 95 },
+  { nome: "CSS", nivel: 90 },
+  { nome: "JavaScript", nivel: 60 },
+  { nome: "Node.js", nivel: 60 }
+];
+
+const container = document.querySelector(".skills-container");
+
+skills.forEach(skill => {
+  const card = document.createElement("div");
+  card.classList.add("skill-card");
+
+  card.innerHTML = `
+    <div class="skill-content">
+      <div class="skill-header">
+        <span>${skill.nome}</span>
+        <span>${skill.nivel}%</span>
+      </div>
+      <div class="bar">
+        <div class="progress" data-width="${skill.nivel}"></div>
+      </div>
+    </div>
+    <div class="glow"></div>
+  `;
+
+  // efeito glow seguindo mouse
+  card.addEventListener("mousemove", e => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    card.style.setProperty("--x", x + "px");
+    card.style.setProperty("--y", y + "px");
+  });
+
+  container.appendChild(card);
+});
+
+// animação ao aparecer
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll(".progress").forEach(bar => {
+        bar.style.width = bar.dataset.width + "%";
+      });
+    }
+  });
+});
+
+observer.observe(container);

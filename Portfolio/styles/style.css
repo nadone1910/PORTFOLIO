@@ -195,3 +195,71 @@
     width: 600px;
     height: 600px;
 }
+               
+
+
+
+.skills-container {
+  max-width: 700px;
+  margin: 60px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.skill-card {
+  position: relative;
+  padding: 20px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgb(36, 37, 41);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: 0.3s;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px) scale(1.01);
+}
+
+/* conteúdo */
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.bar {
+  width: 100%;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  width: 0;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #ca1212, #d83434, #c21658);
+  transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--x) var(--y),
+    rgba(202, 18, 18, 0.25),
+    transparent 40%
+  );
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.skill-card:hover .glow {
+  opacity: 1;
+}
+
+
