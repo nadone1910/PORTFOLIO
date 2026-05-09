@@ -22,7 +22,7 @@
 
 .nav {
     border-radius: 5px;
-    background: linear-gradient(270deg, #000000, #0e0c0c, #131313);
+    background: linear-gradient(270deg, #111111, #141313, #222121);
     background-size: 600% 600%;
     animation: gradientMove 8s ease infinite;
     height: 150px;
@@ -121,7 +121,7 @@
 }
 
 .botao {
-    background: linear-gradient(270deg, #ff0000, #ff0000, #ff002b);
+    background: linear-gradient(270deg, #ff0000, #ff0000, #aa0606);
     background-size: 600% 600%;
     animation: gradientMove 8s ease infinite;
     color: #ffffff;
@@ -163,7 +163,7 @@
     font-size: 16px;
     margin: 20px;
     padding: 20px;
-    background: linear-gradient(270deg, #000000, #0e0c0c, #131313);
+    background: linear-gradient(270deg, #111111, #141313, #131313);
     background-size: 600% 600%;
     animation: gradientMove 8s ease infinite;
     border: 1px solid rgba(0, 0, 0, 0.12);
@@ -261,5 +261,7 @@
 .skill-card:hover .glow {
   opacity: 1;
 }
+
+
 
 
