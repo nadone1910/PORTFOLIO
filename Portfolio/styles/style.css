@@ -121,11 +121,10 @@
 }
 
 .botao {
-    background: linear-gradient(270deg, #ff0000, #ff0000, #aa0606);
+    background: linear-gradient(270deg, #e6263f, #e60606, #e9052b);
     background-size: 600% 600%;
     animation: gradientMove 8s ease infinite;
     color: #ffffff;
-    padding: 10px 20px;
     font-size: 16px;
     border-radius: 999px;
     border: none;
@@ -134,7 +133,99 @@
     right: 70px;
     cursor: pointer;
     transition: transform 0.3s ease;
+    padding: 12px 28px;
+    margin-top: 20px;
+    width: 140px;
+    height:52px;
 }
+.botao:hover {
+    transform: scale(1.05);
+}
+
+
+.btn{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 28px;
+    border-radius: 999px;
+    background: linear-gradient(270deg, #e6263f, #e60606, #e9052b);
+    animation: gradientMove 8s ease infinite;
+    background-size: 600% 600%;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+
+.projetos {
+    color: white;
+    padding: 60px 20px;
+}
+
+.projetos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.projeto {
+    background: #111;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.projeto img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.projeto:hover {
+    transform: translateY(-8px);
+}
+
+
+
+.info-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  margin: 0px;
+}
+
+/* seu card */
+.informacoes {
+  flex: 1;
+}
+
+/* imagem direita */
+.foto {
+  width: 620px;
+  height: 480px;
+  margin: 60px auto;
+  padding: 0 20px;
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* animação de shake */
@@ -152,10 +243,6 @@
     100% { background-position: 0% 50%; }
 }
 
-
-.botao:hover {
-    animation: shake 0.4s ease;
-}
 
 .informacoes {
     color: #ffffff;

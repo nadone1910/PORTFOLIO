@@ -1,6 +1,6 @@
 const NOME = "Samuel Nadone";
 let tituloProfissional = "Desenvolvedor";
-let minhaBio = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a";
+let minhaBio = "Sou desenvolvedor focado em criar interfaces modernas, rápidas e intuitivas. Tenho experiência com HTML, CSS e JavaScript, buscando sempre entregar projetos com design profissional e alto nível de performance.";
 let anoFormatura = 2026;
 
 let mesFormatura = 12;
@@ -139,3 +139,26 @@ const observer = new IntersectionObserver(entries => {
 });
 
 observer.observe(container);
+
+     
+
+
+
+
+const elementos = document.querySelectorAll('.perfil, .informacoes, .projeto');
+
+const observer2 = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = 1;
+      entry.target.style.transform = "translateY(0)";
+    }
+  });
+});
+
+elementos.forEach(el => {
+  el.style.opacity = 0;
+  el.style.transform = "translateY(40px)";
+  el.style.transition = "0.8s";
+  observer2.observe(el);
+});
