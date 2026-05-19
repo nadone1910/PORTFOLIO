@@ -86,6 +86,14 @@ botao.addEventListener('click', function() {
 });
 
 
+const modal = document.getElementById("modal")
+const btn = document.getElementById("openModal")
+
+btn.onclick = () => {
+  modal.style.display = "flex"
+}
+
+
 
 
 const skills = [
@@ -162,3 +170,6 @@ elementos.forEach(el => {
   el.style.transition = "0.8s";
   observer2.observe(el);
 });
+
+
+

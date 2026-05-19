@@ -142,6 +142,28 @@
     transform: scale(1.05);
 }
 
+.botaoContato {
+    background: linear-gradient(270deg, #e6263f, #e60606, #e9052b);
+    background-size: 600% 600%;
+    animation: gradientMove 8s ease infinite;
+    color: #ffffff;
+    font-size: 16px;
+    border-radius: 999px;
+    border: none;
+    position: absolute;
+    top: 70px;
+    right: 230px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    padding: 12px 28px;
+    margin-top: 20px;
+    width: 140px;
+    height:52px;
+}
+.botaoContato:hover {
+    transform: scale(1.05);
+}
+
 
 .btn{
     display: inline-block;
@@ -463,4 +485,28 @@
 .github-btn img {
     width: 20px;
     height: 20px;
-}                                                                                                                                                                 
+}       
+
+
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.7);
+
+  justify-content: center;
+  align-items: center;
+}
+
+.modal form {
+  background: #111;
+  padding: 30px;
+  border-radius: 12px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  width: 350px;
+}

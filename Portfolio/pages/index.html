@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dev Nadone</title>
     <link rel="stylesheet" href="../styles/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body class="fundo">
     <header>
@@ -16,6 +17,19 @@
             </div>
             <img src="../img/logoport.jpg" class="logo">
             <button class="botao">Sobre mim</button>
+            <button id="openModal" class="botaoContato">Contato</button>
+
+               <div class="modal" id="modal">
+               <form id="contact-form">
+                 <input type="text" name="name" placeholder="Seu nome" required>
+
+                 <input type="email" name="email" placeholder="Seu email" required>
+
+                <textarea name="message" placeholder="Sua mensagem"></textarea>
+
+    <button type="submit">Enviar</button>
+  </form>
+</div>
         </nav>
     </header>
 
