@@ -1,6 +1,6 @@
 const NOME = "Samuel Nadone";
 let tituloProfissional = "Desenvolvedor";
-let minhaBio = "Sou desenvolvedor focado em criar interfaces modernas, rápidas e intuitivas. Tenho experiência com HTML, CSS e JavaScript, buscando sempre entregar projetos com design profissional e alto nível de performance.";
+let minhaBio = "Sou desenvolvedor focado em criar interfaces modernas, rápidas e intuitivas. Busco sempre desenvolver projetos com design profissional, experiência fluida e alto nível de performance, unindo criatividade, estética e funcionalidade em cada detalhe.";
 let anoFormatura = 2026;
 
 let mesFormatura = 12;
@@ -22,15 +22,6 @@ let curso = {
     disciplinaAtual: "Aluno"
 }
 
-
-
-console.log(typeof nulo);
-console.log(typeof indefinido);
-console.log(typeof anoFormatura);
-console.log(typeof minhaBio);
-console.log(typeof tituloProfissional);
-console.log(typeof NOME);
-console.log(typeof curso);
 
 document.getElementById("meuNome").innerText = NOME;
 document.getElementById("tituloProfissional").innerText = tituloProfissional;
@@ -173,3 +164,139 @@ elementos.forEach(el => {
 
 
 
+
+
+
+emailjs.init("4X7N1vdBb5EOsb5Xg");
+
+const modalOverlay = document.getElementById("modalOverlay");
+const openModal = document.getElementById("openModal");
+const closeModal = document.getElementById("closeModal");
+
+openModal.addEventListener("click", () => {
+    modalOverlay.classList.add("active");
+    document.body.style.overflow = "hidden";
+});
+
+closeModal.addEventListener("click", () => {
+    modalOverlay.classList.remove("active");
+    document.body.style.overflow = "auto";
+});
+
+modalOverlay.addEventListener("click", (e) => {
+    if (e.target === modalOverlay) {
+        modalOverlay.classList.remove("active");
+        document.body.style.overflow = "auto";
+    }
+});
+
+const form = document.getElementById("contact-form");
+
+form.addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    const button = document.querySelector(".submitBtn");
+
+    button.innerText = "Enviando...";
+    button.disabled = true;
+
+    emailjs.sendForm(
+        "service_l5jn30y",
+        "template_fpik5hd",
+        this
+    )
+
+    .then(() => {
+
+        button.innerText = "Mensagem enviada!";
+
+        form.reset();
+
+        setTimeout(() => {
+
+            modalOverlay.classList.remove("active");
+
+            button.innerText = "Enviar mensagem";
+            button.disabled = false;
+
+            document.body.style.overflow = "auto";
+
+        }, 2000);
+
+    })
+
+    .catch((error) => {
+
+        console.log(error);
+
+        button.innerText = "Erro ao enviar";
+
+        setTimeout(() => {
+
+            button.innerText = "Enviar mensagem";
+            button.disabled = false;
+
+        }, 2000);
+
+    });
+
+});
+
+
+
+
+
+
+
+
+
+const githubContainer = document.getElementById("githubRepos");
+
+fetch("https://api.github.com/users/nadone1910/repos")
+
+.then(response => response.json())
+
+.then(data => {
+
+    const repos = data
+    .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+    .slice(0, 4);
+
+    repos.forEach(repo => {
+
+        githubContainer.innerHTML += `
+
+        <div class="github-card">
+
+            <div class="github-top">
+
+                <i class="fa-brands fa-github"></i>
+
+                <span class="language">
+                    ${repo.language || "Projeto"}
+                </span>
+
+            </div>
+
+            <h3>${repo.name}</h3>
+
+            <p>
+                ${repo.description || "Projeto desenvolvido para estudos e evolução prática no desenvolvimento front-end."}
+            </p>
+
+            <a 
+                href="${repo.html_url}" 
+                target="_blank"
+                class="github-link"
+            >
+                Ver repositório
+            </a>
+
+        </div>
+
+        `;
+
+    });
+
+});

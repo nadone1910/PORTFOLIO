@@ -17,22 +17,47 @@
             </div>
             <img src="../img/logoport.jpg" class="logo">
             <button class="botao">Sobre mim</button>
-            <button id="openModal" class="botaoContato">Contato</button>
+            <button id="openModal" class="botaoContato">
+    Contato
+</button>
 
-               <div class="modal" id="modal">
-               <form id="contact-form">
-                 <input type="text" name="name" placeholder="Seu nome" required>
 
-                 <input type="email" name="email" placeholder="Seu email" required>
 
-                <textarea name="message" placeholder="Sua mensagem"></textarea>
-
-    <button type="submit">Enviar</button>
-  </form>
+<div class="modalOverlay" id="modalOverlay">
+    <div class="modal" id="modal">
+        <button class="closeModal" id="closeModal">
+            ✕
+        </button>
+        <form id="contact-form">
+            <h2>Entre em contato</h2>
+            <input 
+                type="text" 
+                name="name" 
+                placeholder="Seu nome" 
+                required
+            >
+            <input 
+                type="email" 
+                name="email" 
+                placeholder="Seu email" 
+                required
+            >
+            <textarea 
+                name="message" 
+                placeholder="Sua mensagem"
+                required
+            ></textarea>
+            <button type="submit" class="submitBtn">
+                Enviar mensagem
+            </button>
+        </form>
+    </div>
 </div>
-        </nav>
-    </header>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="script.js"></script>
+</nav>
+    </header>
     <main>
         <section class="perfil">
             <h1 id="meuNome"></h1>
@@ -48,20 +73,36 @@
 
     <div class="info-wrapper">
 
-    <aside class="informacoes">
-        <h3 class="letras">Informações</h3>
+<aside class="informacoes">
 
-        <p id="anoFormatura"></p>
-        <p id="anoIngresso"></p>
+    <div class="info-card">
 
-        <div class="tempo">
-            <p id="tempoRestanteParaFormatura"></p>
-            <p id="tempoRestanteParaFormatura2"></p>
-            <p id="tempoRestanteParaFormatura3"></p>
+        <h3 class="letras">Stack</h3>
+
+        <div class="stack-icons">
+
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg">
+            <img src="https://cdn.simpleicons.org/github/white">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg">
+            <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg">
         </div>
 
-        <div class="skills-container">NIVEL DE CONHECIMENTO</div>
-    </aside>
+    </div>
+
+    <div class="info-card">
+        <h3 class="letras">Atualmente</h3>
+        <p class="current-text">
+            Estudando APIs, animações modernas e experiências interativas para criar projetos cada vez mais profissionais e diferenciados.
+        </p>
+
+    </div>
+
+</aside>
 
    <div class="foto-wrapper">
         <img src="../img/rosto1.jpg" class="foto">
@@ -73,6 +114,7 @@
 <section id="projetos" class="projetos">
   <h2>Projetos</h2>
   <div class="projetos-grid">
+    
     <div class="projeto">
       <img src="../img/estacionamento.jpg" alt="Sistema de Estacionamento">
 
@@ -99,10 +141,38 @@
         Ver código
       </a>
     </div>
-
   </div>
 </section>
+<section class="github-api-section">
 
+    <div class="github-title">
+        <span>LIVE FROM GITHUB</span>
+        <h2>Projetos Recentes</h2>
+    </div>
+
+    <div id="githubRepos" class="github-grid"></div>
+
+</section>
+<footer class="footer">
+    <div class="footer-content">
+        <p class="footer-text">
+            © 2026 Samuel Nadone — Desenvolvedor UI/UX
+        </p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/samuelnadone" target="_blank">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/nadone1910" target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://instagram.com/_nadone23" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </div>
+    </div>
+</footer>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <script src="../scripts/script.js"></script>
 </body>

@@ -223,8 +223,37 @@
 }
 
 /* seu card */
-.informacoes {
-  flex: 1;
+.stack-icons {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 18px;
+}
+
+.stack-icons img {
+    width: 48px;
+    height: 48px;
+
+    padding: 10px;
+
+    border-radius: 16px;
+
+    background: rgba(255,255,255,0.04);
+
+    border: 1px solid rgba(255,255,255,0.06);
+
+    transition: 0.35s ease;
+}
+
+.stack-icons img:hover {
+    transform: translateY(-6px) scale(1.08);
+
+    background: rgba(255,255,255,0.08);
+
+    border-color: rgba(255,255,255,0.12);
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.25);
 }
 
 /* imagem direita */
@@ -509,4 +538,326 @@
   gap: 15px;
 
   width: 350px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.modalOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.4s;
+    z-index: 999;
+}
+
+.modalOverlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    width: 400px;
+    height: 500px;
+
+    background: #111;
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 24px;
+
+    padding: 40px;
+
+    transform: scale(0.8);
+    transition: 0.4s;
+
+    position: relative;
+
+    box-shadow:
+    0 0 40px rgba(255,255,255,0.04);
+}
+
+.modalOverlay.active .modal {
+    transform: scale(1);
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+#contact-form h2 {
+    color: white;
+    font-size: 28px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 10px;
+}
+
+#contact-form input,
+#contact-form textarea {
+    background: #1b1b1b;
+    border: 1px solid rgba(255,255,255,0.08);
+
+    padding: 16px;
+    border-radius: 14px;
+
+    color: white;
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    border-color: white;
+    transform: translateY(-2px);
+}
+
+#contact-form textarea {
+    resize: none;
+    min-height: 140px;
+}
+
+.submitBtn {
+    height: 55px;
+
+    border: none;
+    border-radius: 999px;
+
+    background: white;
+    color: black;
+
+    font-weight: bold;
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.submitBtn:hover {
+    transform: translateY(-3px);
+}
+
+.closeModal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #1b1b1b;
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 16px;
+}
+
+
+
+.footer {
+    background-size: 600% 600%;
+    padding: 35px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    animation: gradientMove 8s ease infinite;
+    background: #0a0a0a;
+    border-radius: 5px;
+    margin-top: 120px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-text {
+    color: rgba(255,255,255,0.35);
+
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.social-links {
+    display: flex;
+    gap: 16px;
+}
+
+.social-links a {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.05);
+    color: rgba(255,255,255,0.45);
+    font-size: 18px;
+    text-decoration: none;
+    transition: 0.35s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-5px);
+    color: white;
+    border-color: rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.08);
+    box-shadow: 0 10px 30px rgba(255,255,255,0.05);
+}
+
+
+.github-api-section {
+    width: 100%;
+    padding: 120px 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.github-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.github-title span {
+    color: rgba(255,255,255,0.4);
+
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+.github-title h2 {
+    color: white;
+
+    font-size: 48px;
+
+    margin-top: 12px;
+}
+
+.github-grid {
+    width: 100%;
+    max-width: 1200px;
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+    gap: 24px;
+}
+
+.github-card {
+    background: rgba(255,255,255,0.03);
+
+    border: 1px solid rgba(255,255,255,0.06);
+
+    border-radius: 24px;
+
+    padding: 28px;
+
+    backdrop-filter: blur(12px);
+
+    transition: 0.4s ease;
+}
+
+.github-card:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(255,255,255,0.15);
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,0.3);
+}
+
+.github-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.github-top i {
+    color: white;
+    font-size: 24px;
+}
+
+.language {
+    color: rgba(255,255,255,0.4);
+
+    font-size: 13px;
+}
+
+.github-card h3 {
+    color: white;
+
+    font-size: 24px;
+
+    margin-bottom: 15px;
+}
+
+.github-card p {
+    color: rgba(255,255,255,0.45);
+
+    line-height: 1.7;
+
+    min-height: 90px;
+}
+
+.github-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 25px;
+
+    padding: 12px 18px;
+
+    border-radius: 14px;
+
+    background: white;
+    color: black;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.github-link:hover {
+    transform: translateY(-3px);
 }
