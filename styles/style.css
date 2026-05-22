@@ -267,18 +267,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /* animação de shake */
 @keyframes shake {
     0% { transform: translateX(0); }
@@ -334,8 +322,6 @@
     height: 600px;
 }
                
-
-
 
 .skills-container {
   max-width: 700px;
@@ -518,39 +504,6 @@
 
 
 
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.7);
-
-  justify-content: center;
-  align-items: center;
-}
-
-.modal form {
-  background: #111;
-  padding: 30px;
-  border-radius: 12px;
-
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-
-  width: 350px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
 .modalOverlay {
     position: fixed;
     inset: 0;
@@ -573,28 +526,46 @@
     visibility: visible;
 }
 
+/* MODAL CORRIGIDO (SEM display:none) */
 .modal {
     width: 400px;
     height: 500px;
 
     background: #111;
     border: 1px solid rgba(255,255,255,0.08);
-
     border-radius: 24px;
 
     padding: 40px;
 
-    transform: scale(0.8);
-    transition: 0.4s;
-
     position: relative;
 
-    box-shadow:
-    0 0 40px rgba(255,255,255,0.04);
+    box-shadow: 0 0 40px rgba(255,255,255,0.04);
+
+    /* estado inicial escondido */
+    transform: scale(0.8);
+    opacity: 0;
+    pointer-events: none;
+
+    transition: 0.4s;
 }
 
+/* quando abre o modal */
 .modalOverlay.active .modal {
     transform: scale(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal form {
+    background: #111;
+    padding: 30px;
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    width: 350px;
 }
 
 #contact-form {
@@ -676,8 +647,6 @@
 
     font-size: 16px;
 }
-
-
 
 .footer {
     background-size: 600% 600%;
