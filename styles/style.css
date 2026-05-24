@@ -258,10 +258,13 @@
 
 /* imagem direita */
 .foto {
-  width: 620px;
-  height: 480px;
-  margin: 60px auto;
-  padding: 0 20px;
+  width: 560px;
+  height: 880px;
+  position: relative;
+  top: -170px;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 0;
  
 }
 
@@ -390,8 +393,9 @@
 .projetos {
     color: #ffffff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding: 100px 20px;
+    
     text-align: center;
+    padding: 60px 20px 80px;
 }
 
 /* título */
@@ -409,6 +413,7 @@
     gap: 30px;
     max-width: 1100px;
     margin: auto;
+    
 }
 
 /* CARD */
@@ -829,4 +834,25 @@
 
 .github-link:hover {
     transform: translateY(-3px);
+}
+
+
+
+
+
+
+
+
+
+
+.L {
+    position: relative;
+    padding: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    background:#FB5050;
+    backdrop-filter: blur(12px);
+    transition: 0.3s;
+    height: 180px;
+    width: 600px
 }
