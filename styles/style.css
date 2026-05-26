@@ -21,12 +21,26 @@
 
 
 .nav {
-    border-radius: 5px;
+    border-radius: 0;
     background: linear-gradient(270deg, #111111, #141313, #222121);
     background-size: 600% 600%;
     animation: gradientMove 8s ease infinite;
     height: 150px;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 30px;
+    width: 100%;
+    margin: 0;
+}
+
+.nav-buttons {
+    position: absolute;
+    top: 70px;
+    right: 30px;
+    display: flex;
+    gap: 20px;
 }
 
 .sky {
@@ -460,35 +474,27 @@
 /* BOTÃO GITHUB (mesmo padrão do seu botão principal) */
 .github-btn {
     display: inline-flex;
-        align-items: center;
-            width: 300px;
-                height: 20px;
-                    gap: 8px;
-                        padding: 10px 18px;
-                            border-radius: 999px;
-    font-size: 14px;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 11px;
     color: #ffffff;
     text-decoration: none;
-    
-
     border: 1px solid rgba(230, 38, 63, 0.4);
     background: linear-gradient(270deg, #e6263f, #e60606, #e9052b);
     background-size: 600% 600%;
     animation: gradientMove 8s ease infinite;
-    display: flex;
-    align-items: center;
     justify-content: center;
     margin: 0 auto;
-
     transition: transform 0.3s ease;
 }
 
 .github-icon {
-    width: 20px;
-    height: 20px;
-    filter: brightness(0) invert(1); /* deixa branco no seu tema escuro */
+    width: 12px;
+    height: 12px;
+    filter: brightness(0) invert(1);
     transition: 0.3s;
-    
 }
 
 
@@ -503,8 +509,8 @@
 
 /* ícone github */
 .github-btn img {
-    width: 20px;
-    height: 20px;
+    width: 12px;
+    height: 12px;
 }       
 
 
@@ -989,13 +995,76 @@
 
 @media (max-width: 480px){
 
+    .logo{
+        width:100px;
+        height:100px;
+        margin-left:0;
+        margin-top:0;
+    }
+
+    .nav{
+        height:auto;
+        display:flex;
+        justify-content:center;
+        padding:12px;
+    }
+
+    .nav-buttons{
+        position:static;
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+        width:100%;
+        margin-top:12px;
+        padding:0 16px;
+        justify-content:center;
+        align-items:center;
+    }
+
     .botao,
     .botaoContato{
-        width:100%;
+        width:140px;
+        position:static;
+        margin:0;
+        right:auto;
+        top:auto;
+        height:40px;
+        font-size:13px;
+        padding:8px 16px;
     }
 
     .perfil{
         text-align:center;
+        margin:30px 16px;
+    }
+
+    .perfil h1{
+        font-size:1.4rem;
+    }
+
+    .perfil h2{
+        font-size:0.95rem;
+    }
+
+    .info-wrapper{
+        flex-direction:column;
+        align-items:center;
+        margin:30px 16px;
+    }
+
+    .foto{
+        width:100%;
+        height:auto;
+        position:static;
+        top:auto;
+        display:block;
+    }
+
+    .informacoes{
+        width:100%;
+        max-width:100%;
+        margin:0;
+        padding:16px;
     }
 
     .github-card{
@@ -1010,5 +1079,34 @@
     .github-link{
         width:100%;
         justify-content:center;
+    }
+
+    .btn{
+        width:100%;
+        text-align:center;
+    }
+
+    .stack-icons{
+        justify-content:center;
+        gap:12px;
+    }
+
+    .stack-icons img{
+        width:40px;
+        height:40px;
+        padding:8px;
+    }
+
+    .projeto{
+        padding:14px;
+    }
+
+    .projeto img{
+        height:120px;
+    }
+
+    .github-btn{
+        width:100%;
+        font-size:13px;
     }
 }
